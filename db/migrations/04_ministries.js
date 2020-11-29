@@ -1,7 +1,9 @@
 exports.up = function(knex){
     return knex.schema.createTable('ministries', function(table){
         table.increments()
-        table.string('name').notNullable()
+        table.string('ministry_name').notNullable()
+        // not all ministries will have a url, urls are optional
+        table.string('url')
     })
 }
 
